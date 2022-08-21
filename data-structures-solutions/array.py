@@ -31,21 +31,60 @@ def adjustexp(exp, month, value):
     exp[month-1] = exp[month-1]-value
     return exp
 # print array exp
-print("List of expenses from Jan to May this year is ", exp)
+print("\nList of expenses from Jan to May this year is ", exp)
 
 # compare February expenses to January
-print("Q1: How many dollars did you spend extra in Feb compared to Jan? \nA1:", exp[1]-exp[0])
+print("Q1.1: How many dollars did you spend extra in Feb compared to Jan? \nA1.1:", exp[1]-exp[0])
 
 # total expense in first quarter
-print("Q2: What is the total expense in the first quarter on the year? \nA2:", sum(exp[0:3]))
+print("Q1.2: What is the total expense in the first quarter on the year? \nA1.2:", sum(exp[0:3]))
 
 # find exact value in array
-print("Q3: Did you spend exact $2000 in any months? \nA3:", end=" ")
+print("Q1.3: Did you spend exact $2000 in any months? \nA1.3:", end=" ")
 findexp(exp, 2000)
 
 # add June month exp to array
 exp.append(1980)
-print("Q4: Add expense of $1980 for June month to the expenses list. \nA4:", exp)
+print("Q1.4: Add expense of $1980 for June month to the expenses list. \nA1.4:", exp)
 
 # make adjustment to array for $200 refund in April
-print("Q5: If a refund of $200 was received in April, make an adjustment to the expenses accordingly. \nA5: Updated expenses are", adjustexp(exp, 4, 200))
+print("Q1.5: If a refund of $200 was received in April, make an adjustment to the expenses accordingly. \nA1.5: Updated expenses are", adjustexp(exp, 4, 200))
+
+'''
+You have a list of your favourite marvel super heros.
+heros=['spider man','thor','hulk','iron man','captain america']
+Using this find out,
+
+1. Length of the list
+2. Add 'black panther' at the end of this list
+3. You realize that you need to add 'black panther' after 'hulk',
+   so remove it from the list first and then add it after 'hulk'
+4. Now you don't like thor and hulk because they get angry easily :)
+   So you want to remove thor and hulk from list and replace them with doctor strange (because he is cool).
+   Do that with one line of code.
+5. Sort the heros list in alphabetical order (Hint. Use dir() functions to list down all functions available in list)
+'''
+heroes=['spider man','thor','hulk','iron man','captain america']
+
+# print list of superheroes
+print("\nList of favorite marvel superheroes is", heroes)
+
+# 1. Length of the list
+print("Q2.1: Print length of list. \nA2.1: Length of the list heros is", len(heroes))
+
+# 2. Add 'black panther' at the end of this list
+heroes.append('black panther')
+print("Q2.2: Add black panther to the list. \nA2.2: Updated list", heroes)
+
+# 3. You realize that you need to add 'black panther' after 'hulk', so remove it from the list first and then add it after 'hulk'
+print("Q2.3: Remove black panther from the end and add after hulk. \nA2.3:", end=" ")
+heroes.insert(3, heroes.pop())
+print(heroes)
+
+# 4. Now you don't like thor and hulk because they get angry easily :) So you want to remove thor and hulk from list and replace them with doctor strange (because he is cool). Do that with one line of code.
+heroes = [ele for ele in heroes if ele not in ('thor', 'hulk')] + ['doctor strange']
+print("Q2.4: Remove thor and hulk and add doctor strange using one line of code. \nA2.4: Updated list", heroes)
+
+# 5. Sort the heros list in alphabetical order (Hint. Use dir() functions to list down all functions available in list)
+heroes.sort()
+print("Q2.5: Sort the list alphabetically. \nA2.5: Sorted list", heroes,"\n")
