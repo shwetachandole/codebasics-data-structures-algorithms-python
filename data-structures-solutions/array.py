@@ -88,3 +88,18 @@ print("Q2.4: Remove thor and hulk and add doctor strange using one line of code.
 # 5. Sort the heros list in alphabetical order (Hint. Use dir() functions to list down all functions available in list)
 heroes.sort()
 print("Q2.5: Sort the list alphabetically. \nA2.5: Sorted list", heroes,"\n")
+
+'''
+Create a list of all odd numbers between 1 and a max number. Max number is something you need to take from a user using input() function
+'''
+# define function to list odd numbers
+def listoddnums():
+    ls = []
+    n = int(input("Enter max number to print all odd numbers from 1 to given max number:"))
+    for i in range(1,n+1):
+        if i%2 == 1:
+            ls.append(i)
+    print(ls)
+    print("\n")
+
+listoddnums()
