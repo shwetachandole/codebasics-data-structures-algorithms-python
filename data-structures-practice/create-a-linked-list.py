@@ -89,13 +89,29 @@ class LinkedList:
             
             itr = itr.next
             count += 1
-        
     
+    # Adding reversed linked list function using iterative method
+    def reversedLL(self):
+        if self.head is None:
+            return 
+        
+        new = None
+        itr = self.head
+        while itr:
+            hold = itr.next
+            itr.next = new
+            new = itr
+            itr = hold
+            
+        self.head = new
+    
+        return 
 
 if __name__ == '__main__':
     #pass
-    '''ll = LinkedList()
+    ll = LinkedList()
     ll.print()
+    '''
     ll.insert_at_beginning(5)
     ll.insert_at_beginning(89)
     ll.insert_at_end(79)
@@ -103,8 +119,8 @@ if __name__ == '__main__':
     ll.insert_at_beginning(31)
     ll.insert_at_end(81)
     ll.print()
-    '''
-    ll = LinkedList()
+    print(ll.get_length())
+    
     ll.insert_values(['a','b','c','d','e'])
     ll.print()
     ll.insert_at(0,'z')
@@ -113,7 +129,15 @@ if __name__ == '__main__':
     #ll.remove_at(20)
     #ll.remove_at(0)
     #ll.remove_at(-1)
-    ll.print()
-    print(ll.get_length())
     
+    ll.insert_values([45,7,12,567,99])
+    ll.insert_at_end(67)
+    ll.insert_at(1, 55)
+    ll.print()
+    '''
+    ll.insert_values(['a','b','c','d','e'])
+    ll.print()
+    ll.reversedLL()
+    ll.print()
+   
     
